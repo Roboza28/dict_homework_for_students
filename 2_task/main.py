@@ -31,8 +31,9 @@ def top_10_most_common_words(text: str) -> dict[str, int]:
     """
     text_split_and_sort = sorted(re.split(r'\W+', text.lower()))
     correct_word = []
+    small_word = 3
     for word in text_split_and_sort:
-        if len(word) >= 3:
+        if len(word) >= small_word:
             correct_word.append(word)
     most_common = dict(Counter(correct_word).most_common(10))
     return most_common

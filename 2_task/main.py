@@ -16,6 +16,8 @@
 
 для тестирования запустить pytest 2_task/test.py
 """
+from collections import Counter
+import re
 
 
 def top_10_most_common_words(text: str) -> dict[str, int]:
@@ -27,5 +29,10 @@ def top_10_most_common_words(text: str) -> dict[str, int]:
     Returns:
         словарь типа {слово: количество вхождений}
     """
-    most_common = {}
+    text_split_and_sort = sorted(re.split(r'\W+', text.lower()))
+    correct_word = []
+    for word in text_split_and_sort:
+        if len(word) >= 3:
+            correct_word.append(word)
+    most_common = dict(Counter(correct_word).most_common(10))
     return most_common

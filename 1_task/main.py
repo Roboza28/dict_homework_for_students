@@ -53,14 +53,6 @@ def get_parsed_employees_info() -> list[dict[str, int | str]]:
         'position': lambda x: str(x),
     })
 
-    # for employee_info in employees_info:
-    #     dict_employee_info = {}
-    #     for num_word, info in enumerate(employee_info.split()):
-    #         if info in dict_pattern.keys():
-    #             dict_employee_info[info] = dict_pattern[info](employee_info.split()[num_word + 1])
-    #     #print(dict_employee_info)
-    #     parsed_employees_info.append(dict_employee_info)
-
     for employee_info in employees_info:
         dict_employee_info = {}
         for num_word, info in enumerate(employee_info.split()):

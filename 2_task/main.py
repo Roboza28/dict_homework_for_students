@@ -29,15 +29,8 @@ def top_10_most_common_words(text: str) -> dict[str, int]:
     Returns:
         словарь типа {слово: количество вхождений}
     """
-    #text_split_and_sort = sorted(re.split(r'\W+', text.lower()))
-    #print(text_split_and_sort)
+
     correct_word = sorted(re.findall(r'\b\w{3,}\b', text.lower()))
-    #correct_word = []
-    small_word = 3
-    #for word in text_split_and_sort:
-    #    if len(word) >= small_word:
-    #        correct_word.append(word)
     most_common = dict(Counter(correct_word).most_common(10))
     print()
     return most_common
-

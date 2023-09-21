@@ -32,5 +32,4 @@ def top_10_most_common_words(text: str) -> dict[str, int]:
 
     correct_word = sorted(re.findall(r'\b\w{3,}\b', text.lower()))
     most_common = dict(Counter(correct_word).most_common(10))
-    print()
     return most_common

@@ -45,12 +45,12 @@ def get_parsed_employees_info() -> list[dict[str, int | str]]:
     employees_info = get_employees_info()
     parsed_employees_info = []
     dict_pattern = MappingProxyType({
-        'id': lambda x: int(x),
-        'name': lambda x: str(x),
-        'last_name': lambda x: str(x),
-        'age': lambda x: int(x),
-        'salary': lambda x: Decimal(x),
-        'position': lambda x: str(x),
+        'id': int,
+        'name': str,
+        'last_name': str,
+        'age': int,
+        'salary': Decimal,
+        'position': str,
     })
 
     for employee_info in employees_info:
